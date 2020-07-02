@@ -9,13 +9,26 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="333dp"
-        android:layout_height="686dp"
+        android:id="@+id/ground"
+        android:layout_width="1389dp"
+        android:layout_height="1347dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.15"
+        app:srcCompat="@drawable/ground_first_activity" />
+
+    <ImageView
+        android:id="@+id/bur"
+        android:layout_width="245dp"
+        android:layout_height="317dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.089"
         app:srcCompat="@drawable/anim_bur" />
 
     <ImageView
