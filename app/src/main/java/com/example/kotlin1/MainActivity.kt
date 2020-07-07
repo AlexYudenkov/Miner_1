@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
         val imageViews: MutableList<ImageView> =
             ArrayList()
 
-        imageViews.add(findViewById<View>(R.id.imageView2) as ImageView)
+        imageViews.add(findViewById<View>(R.id.bur) as ImageView)
 
         animateImageViews(imageViews)
     }
