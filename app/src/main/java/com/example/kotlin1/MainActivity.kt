@@ -23,11 +23,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         //присваиваем кнопкам реальные id
-        val Play: ImageView = findViewById(R.id.start)
+        val Bur: ImageView = findViewById(R.id.bur)
         val Menu1: ImageView = findViewById(R.id.menu)
         val Exit1: ImageView = findViewById(R.id.exit)
 
-        Play.setOnClickListener {
+        Bur.setOnClickListener {
             val randomIntent = Intent(this, MainActivity2::class.java)
             startActivity(randomIntent)}
 
