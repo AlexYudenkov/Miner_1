@@ -10,6 +10,7 @@
         android:id="@+id/ground"
         android:layout_width="1389dp"
         android:layout_height="1347dp"
+        android:contentDescription="@string/ground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.529"
@@ -22,11 +23,12 @@
         android:id="@+id/bur"
         android:layout_width="245dp"
         android:layout_height="317dp"
+        android:contentDescription="@android:string/httpErrorBadUrl"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.089"
-        app:srcCompat="@drawable/anim_bur" />
+        app:layout_constraintVertical_bias="0.311"
+        app:srcCompat="@drawable/anim_bur_game" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
