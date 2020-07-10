@@ -13,9 +13,14 @@ class MainActivity2 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
         val Bur: ImageView = findViewById(R.id.bur)
+        val ExitHome: ImageView = findViewById(R.id.exithome)
 
         val imageViews: MutableList<ImageView> =
                 ArrayList()
+
+        ExitHome.setOnClickListener {
+            val randomIntent = Intent(this, MainActivity::class.java)
+            startActivity(randomIntent)}
 
         imageViews.add(findViewById<View>(R.id.bur) as ImageView)
 

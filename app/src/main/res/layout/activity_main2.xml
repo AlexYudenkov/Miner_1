@@ -31,4 +31,16 @@
         app:layout_constraintVertical_bias="0.311"
         app:srcCompat="@drawable/anim_bur_game" />
 
+    <ImageView
+        android:id="@+id/exithome"
+        android:layout_width="75dp"
+        android:layout_height="55dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.024"
+        app:srcCompat="@drawable/ic_exithome" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
