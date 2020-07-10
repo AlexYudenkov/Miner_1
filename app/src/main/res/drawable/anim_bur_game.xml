@@ -143,12 +143,12 @@ C 105.554 77.271 105.747 76.811 105.75 76.33 L 105.75 69.58 L 109.19 69.58 L 109
     </aapt:attr>
     <target android:name="group">
         <aapt:attr name="android:animation">
-            <objectAnimator android:duration="200" android:interpolator="@android:anim/bounce_interpolator" android:propertyName="translateY" android:repeatCount="5" android:valueFrom="0" android:valueTo="-2" android:valueType="floatType"/>
+            <objectAnimator android:duration="150" android:interpolator="@android:anim/bounce_interpolator" android:propertyName="translateY" android:repeatCount="5" android:valueFrom="0" android:valueTo="-2" android:valueType="floatType"/>
         </aapt:attr>
     </target>
     <target android:name="group">
         <aapt:attr name="android:animation">
-            <objectAnimator android:duration="100" android:interpolator="@android:anim/linear_interpolator" android:propertyName="translateX" android:repeatCount="5" android:valueFrom="2" android:valueTo="-2" android:valueType="floatType"/>
+            <objectAnimator android:duration="100" android:interpolator="@android:anim/bounce_interpolator" android:propertyName="translateX" android:repeatCount="5" android:valueFrom="-2" android:valueTo="0" android:valueType="floatType"/>
         </aapt:attr>
     </target>
 </animated-vector>
