@@ -22,4 +22,5 @@
     <string name="go">Go!</string>
     <string name="menu">Menu</string>
     <string name="exit">Exit</string>
+    <string name="ground">Ground</string>
 </resources>
