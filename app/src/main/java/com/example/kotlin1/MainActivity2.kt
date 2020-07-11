@@ -1,5 +1,6 @@
 package com.example.kotlin1
 
+import android.content.Intent
 import android.graphics.drawable.Animatable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
