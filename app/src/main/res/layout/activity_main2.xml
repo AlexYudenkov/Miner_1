@@ -8,16 +8,15 @@
 
     <ImageView
         android:id="@+id/ground"
-        android:layout_width="1389dp"
-        android:layout_height="1347dp"
+        android:layout_width="487dp"
+        android:layout_height="1471dp"
         android:contentDescription="@string/ground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.529"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.15"
-        app:srcCompat="@drawable/ground_first_activity" />
+        app:layout_constraintVertical_bias="0.028"
+        app:srcCompat="@drawable/ic_ground_first_activity" />
 
     <ImageView
         android:id="@+id/bur"
@@ -28,7 +27,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.311"
+        app:layout_constraintVertical_bias="0.038"
         app:srcCompat="@drawable/anim_bur_game" />
 
     <ImageView
@@ -47,7 +46,7 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="0"
         android:textColor="#FDD835"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
