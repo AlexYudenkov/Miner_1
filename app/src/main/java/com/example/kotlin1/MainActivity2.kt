@@ -49,7 +49,7 @@ class MainActivity2 : AppCompatActivity() {
     }
      private fun move(Imageview :ImageView){
         val flingAnimation = FlingAnimation(Imageview, DynamicAnimation.Y)
-        flingAnimation.setStartVelocity(100f);
+        flingAnimation.setStartVelocity(150f);
         flingAnimation.friction = 0.1f;
         flingAnimation.start();
     }
