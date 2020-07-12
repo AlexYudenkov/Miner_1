@@ -1,6 +1,6 @@
 package com.example.kotlin1
 
-class Score(Score: Int) {
+class Score() {
     var Person_game: String = ""
         get() {
             return field
