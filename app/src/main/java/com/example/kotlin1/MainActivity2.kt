@@ -16,6 +16,7 @@ class MainActivity2 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
         val Bur: ImageView = findViewById(R.id.bur)
+        val Ground: ImageView = findViewById(R.id.ground)
         val ExitHome: ImageView = findViewById(R.id.exithome)
         val textView: TextView = findViewById(R.id.textView3)
 
@@ -40,16 +41,23 @@ class MainActivity2 : AppCompatActivity() {
                 if (!a){
                     animateImageViews(imageViews)
                     move(Bur)
+                    moveGround(Ground)
                     a = true
                 }
-                //move(Bur)
                 person.increment()
                 textView.text = person.score.toString()
         }
     }
      private fun move(Imageview :ImageView){
         val flingAnimation = FlingAnimation(Imageview, DynamicAnimation.Y)
-        flingAnimation.setStartVelocity(150f);
+        flingAnimation.setStartVelocity(220f);
+        flingAnimation.friction = 0.1f;
+        flingAnimation.start();
+    }
+
+    private fun moveGround(Imageview :ImageView){
+        val flingAnimation = FlingAnimation(Imageview, DynamicAnimation.Y)
+        flingAnimation.setStartVelocity(-750f);
         flingAnimation.friction = 0.1f;
         flingAnimation.start();
     }
