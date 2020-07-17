@@ -18,6 +18,7 @@ class MainActivity2 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
         val Bur: ImageView = findViewById(R.id.bur)
+        val Ground: ImageView = findViewById(R.id.ground)
         val ExitHome: ImageView = findViewById(R.id.exithome)
         val textView: TextView = findViewById(R.id.textView3)
         val container: FrameLayout = findViewById(R.id.container)
@@ -76,6 +77,13 @@ class MainActivity2 : AppCompatActivity() {
         val flingAnimation = FlingAnimation(Imageview, DynamicAnimation.Y)
         flingAnimation.setStartVelocity(Velocity);
         flingAnimation.friction = friction;
+        flingAnimation.start();
+    }
+
+    private fun moveGround(Imageview :ImageView){
+        val flingAnimation = FlingAnimation(Imageview, DynamicAnimation.Y)
+        flingAnimation.setStartVelocity(-750f);
+        flingAnimation.friction = 0.1f;
         flingAnimation.start();
     }
 
