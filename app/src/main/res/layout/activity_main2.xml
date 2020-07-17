@@ -15,11 +15,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.028"
+        app:layout_constraintVertical_bias="0.921"
         app:srcCompat="@drawable/ic_ground_first_activity" />
 
     <ImageView
-        android:id="@+id/bur"
+        android:id="@+id/Tunnel"
+        android:layout_width="693dp"
+        android:layout_height="1055dp"
+        app:layout_constraintBottom_toBottomOf="@+id/bur1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_tunnel2" />
+
+    <ImageView
+        android:id="@+id/bur1"
         android:layout_width="245dp"
         android:layout_height="317dp"
         android:contentDescription="@android:string/httpErrorBadUrl"
@@ -27,7 +36,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.038"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/anim_bur_game" />
 
     <ImageView
@@ -51,6 +60,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bur" />
+        app:layout_constraintTop_toBottomOf="@+id/bur1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

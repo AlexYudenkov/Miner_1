@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Kotlin1.iml" filepath="$PROJECT_DIR$/.idea/modules/Kotlin1.iml" group="Kotlin1" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Kotlin1-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Kotlin1-app.iml" group="Kotlin1/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Miner_1-Kotlin1.iml" filepath="$PROJECT_DIR$/.idea/modules/Miner_1-Kotlin1.iml" group="Kotlin1" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="Kotlin1/app" />
     </modules>
   </component>

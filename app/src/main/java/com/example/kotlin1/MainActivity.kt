@@ -11,7 +11,13 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.dynamicanimation.animation.DynamicAnimation
+import androidx.dynamicanimation.animation.FlingAnimation
 import kotlinx.android.synthetic.main.activity_main.*
+import java.util.*
+import kotlin.collections.ArrayList
+import java.util.*
+import kotlin.concurrent.schedule
 import kotlin.system.exitProcess
 import com.example.kotlin1.MainActivity2 as MainActivity2
 
@@ -24,12 +30,20 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         //присваиваем кнопкам реальные id
         val Bur: ImageView = findViewById(R.id.bur)
+        val Tunnel: ImageView = findViewById(R.id.tunnel)
         val Menu1: ImageView = findViewById(R.id.menu)
         val Exit1: ImageView = findViewById(R.id.exit)
 
         Bur.setOnClickListener {
-            val randomIntent = Intent(this, MainActivity2::class.java)
-            startActivity(randomIntent)}
+            move(Bur)
+            move(Tunnel)
+            // задержка 3 секунды перед переходом
+            val handler = android.os.Handler()
+            handler.postDelayed({ val randomIntent = Intent(this, MainActivity2::class.java)
+                startActivity(randomIntent) }, 3300) //specify the number of milliseconds
+
+
+            }
 
         Menu1.setOnClickListener {
                 val menuInten = Intent(this, SettingsActivity::class.java)
@@ -64,6 +78,17 @@ class MainActivity : AppCompatActivity() {
             animatable.start()
         }
     }
+
+
+    private fun move(Imageview :ImageView) {
+        val flingAnimation = FlingAnimation(Imageview, DynamicAnimation.Y)
+        flingAnimation.setStartVelocity(1050f);
+        flingAnimation.friction = 0.1f;
+        flingAnimation.start();
+
+    }
+
+
     }
 
 
