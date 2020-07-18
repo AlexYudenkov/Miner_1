@@ -1,28 +1,16 @@
 package com.example.kotlin1
 
 import android.content.Intent
-import android.graphics.Color
+import android.graphics.Point
 import android.graphics.drawable.Animatable
 import android.os.Bundle
-import android.view.Menu
 import android.view.View
-import android.widget.Button
 import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.dynamicanimation.animation.DynamicAnimation
 import androidx.dynamicanimation.animation.FlingAnimation
-import kotlinx.android.synthetic.main.activity_main.*
-import java.util.*
-import kotlin.collections.ArrayList
-import java.util.*
-import kotlin.concurrent.schedule
-import kotlin.system.exitProcess
-import com.example.kotlin1.MainActivity2 as MainActivity2
+import com.example.kotlin1.MainActivity2
 
-
-//называем кнопки
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,16 +22,27 @@ class MainActivity : AppCompatActivity() {
         val Menu1: ImageView = findViewById(R.id.menu)
         val Exit1: ImageView = findViewById(R.id.exit)
 
+        //определение размера экрана
+        val display = windowManager.defaultDisplay
+        val size = Point()
+        display.getSize(size)
+        val width: Int = size.x
+        val height: Int = size.y
+
         Bur.setOnClickListener {
-            move(Bur)
-            move(Tunnel)
+            move(Bur,0)
+            move(Tunnel,0)
             // задержка 3 секунды перед переходом
             val handler = android.os.Handler()
             handler.postDelayed({ val randomIntent = Intent(this, MainActivity2::class.java)
-                startActivity(randomIntent) }, 3300) //specify the number of milliseconds
-
-
+                startActivity(randomIntent)
+                overridePendingTransition(R.anim.diagonaltranslate,R.anim.alpha)}, 3300) //specify the number of milliseconds
             }
+
+
+
+
+
 
         Menu1.setOnClickListener {
                 val menuInten = Intent(this, SettingsActivity::class.java)
@@ -80,11 +79,15 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    private fun move(Imageview :ImageView) {
+    private fun move(Imageview :ImageView,height: Int) {
         val flingAnimation = FlingAnimation(Imageview, DynamicAnimation.Y)
-        flingAnimation.setStartVelocity(1050f);
-        flingAnimation.friction = 0.1f;
+        flingAnimation.setStartVelocity(900f);
+        flingAnimation.friction = 0.13f;
+        //flingAnimation.setMinValue(0.9f )
         flingAnimation.start();
+        if (Imageview.y < 0 ){
+            //flingAnimation.cancel()
+        }
 
     }
 

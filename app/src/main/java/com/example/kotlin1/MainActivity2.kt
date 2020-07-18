@@ -11,14 +11,14 @@ import androidx.dynamicanimation.animation.DynamicAnimation
 import androidx.dynamicanimation.animation.FlingAnimation
 
 
-class MainActivity2 : AppCompatActivity() {
+class   MainActivity2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
         val Bur: ImageView = findViewById(R.id.bur1)
         val Ground: ImageView = findViewById(R.id.ground)
         val Tunnel1: ImageView = findViewById(R.id.Tunnel)
-        Tunnel1.y = Tunnel1.y - 2020 // Почему-то тунели из двух активити связаны, если убарть это изменение координат, то тунель во втором активити будет на месте координатах первого
+        Tunnel1.y = Tunnel1.y - 2000  // Почему-то тунели из двух активити связаны, если убарть это изменение координат, то тунель во втором активити будет на месте координатах первого
         val ExitHome: ImageView = findViewById(R.id.exithome)
         val textView: TextView = findViewById(R.id.textView3)
 
