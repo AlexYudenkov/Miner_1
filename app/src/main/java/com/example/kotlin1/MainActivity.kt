@@ -5,8 +5,10 @@ import android.graphics.Point
 import android.graphics.drawable.Animatable
 import android.os.Bundle
 import android.view.View
+import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isGone
 import androidx.dynamicanimation.animation.DynamicAnimation
 import androidx.dynamicanimation.animation.FlingAnimation
 import com.example.kotlin1.MainActivity2
@@ -22,6 +24,10 @@ class MainActivity : AppCompatActivity() {
         val Menu1: ImageView = findViewById(R.id.menu)
         val Exit1: ImageView = findViewById(R.id.exit)
 
+
+        var fallingAnimation = AnimationUtils.loadAnimation(this,
+                R.anim.down)
+        fallingAnimation.fillAfter=true
         //определение размера экрана
         val display = windowManager.defaultDisplay
         val size = Point()
@@ -30,13 +36,14 @@ class MainActivity : AppCompatActivity() {
         val height: Int = size.y
 
         Bur.setOnClickListener {
-            move(Bur,0)
-            move(Tunnel,0)
+            //move(Bur,0)
+            //move(Tunnel,0)
+            Bur.startAnimation(fallingAnimation)
             // задержка 3 секунды перед переходом
             val handler = android.os.Handler()
             handler.postDelayed({ val randomIntent = Intent(this, MainActivity2::class.java)
                 startActivity(randomIntent)
-                overridePendingTransition(R.anim.diagonaltranslate,R.anim.alpha)}, 3300) //specify the number of milliseconds
+                overridePendingTransition(R.anim.diagonaltranslate,R.anim.alpha)},2000 ) //specify the number of milliseconds
             }
 
 
@@ -81,13 +88,16 @@ class MainActivity : AppCompatActivity() {
 
     private fun move(Imageview :ImageView,height: Int) {
         val flingAnimation = FlingAnimation(Imageview, DynamicAnimation.Y)
-        flingAnimation.setStartVelocity(900f);
-        flingAnimation.friction = 0.13f;
-        //flingAnimation.setMinValue(0.9f )
-        flingAnimation.start();
-        if (Imageview.y < 0 ){
-            //flingAnimation.cancel()
-        }
+        flingAnimation.setStartVelocity(900f)
+        flingAnimation.friction = 0.13f
+        flingAnimation.start()
+        //val a  = Imageview.windowVisibility
+        //if (a == 4){
+            //System.exit(0)
+        //var a = Imageview.visibility
+          //  if (a==View.VISIBLE){
+            //Imageview.visibility = View.GONE}
+        //}
 
     }
 
