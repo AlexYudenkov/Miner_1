@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/stone1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/ground"
+        android:layout_width="487dp"
+        android:layout_height="1471dp"
+        android:contentDescription="@string/ground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.921"
+        app:srcCompat="@drawable/ic_ground_first_activity" />
+
+    <ImageView
+        android:id="@+id/stone"
+        android:layout_width="43dp"
+        android:layout_height="53dp"
+        app:layout_constraintBottom_toTopOf="@+id/stone4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.896"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.219"
+        app:srcCompat="@drawable/ic_stone1" />
+
+    <ImageView
+        android:id="@+id/stone2"
+        android:layout_width="48dp"
+        android:layout_height="55dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.809"
+        app:layout_constraintStart_toEndOf="@+id/stone3"
+        app:layout_constraintTop_toBottomOf="@+id/stone4"
+        app:layout_constraintVertical_bias="0.75"
+        app:srcCompat="@drawable/ic_stone1" />
+
+    <ImageView
+        android:id="@+id/stone3"
+        android:layout_width="54dp"
+        android:layout_height="66dp"
+        android:layout_marginBottom="164dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.187"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/stone4"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/ic_stone2" />
+
+    <ImageView
+        android:id="@+id/stone4"
+        android:layout_width="56dp"
+        android:layout_height="68dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.837"
+        app:layout_constraintStart_toEndOf="@+id/stone3"
+        app:layout_constraintTop_toBottomOf="@+id/stone5"
+        app:layout_constraintVertical_bias="0.257"
+        app:srcCompat="@drawable/ic_stone3" />
+
+    <ImageView
+        android:id="@+id/stone5"
+        android:layout_width="65dp"
+        android:layout_height="75dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/stone"
+        app:layout_constraintHorizontal_bias="0.249"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.214"
+        app:srcCompat="@drawable/ic_stone4" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
