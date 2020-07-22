@@ -22,12 +22,12 @@
         android:id="@+id/stone"
         android:layout_width="43dp"
         android:layout_height="53dp"
-        app:layout_constraintBottom_toTopOf="@+id/stone4"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.896"
+        app:layout_constraintHorizontal_bias="0.875"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.219"
+        app:layout_constraintVertical_bias="0.085"
         app:srcCompat="@drawable/ic_stone1" />
 
     <ImageView
@@ -36,23 +36,22 @@
         android:layout_height="55dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.809"
-        app:layout_constraintStart_toEndOf="@+id/stone3"
-        app:layout_constraintTop_toBottomOf="@+id/stone4"
-        app:layout_constraintVertical_bias="0.75"
+        app:layout_constraintHorizontal_bias="0.79"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.865"
         app:srcCompat="@drawable/ic_stone1" />
 
     <ImageView
         android:id="@+id/stone3"
         android:layout_width="54dp"
         android:layout_height="66dp"
-        android:layout_marginBottom="164dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.187"
+        app:layout_constraintHorizontal_bias="0.207"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/stone4"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.78"
         app:srcCompat="@drawable/ic_stone2" />
 
     <ImageView
@@ -61,10 +60,10 @@
         android:layout_height="68dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.837"
-        app:layout_constraintStart_toEndOf="@+id/stone3"
-        app:layout_constraintTop_toBottomOf="@+id/stone5"
-        app:layout_constraintVertical_bias="0.257"
+        app:layout_constraintHorizontal_bias="0.85"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.499"
         app:srcCompat="@drawable/ic_stone3" />
 
     <ImageView
@@ -72,8 +71,8 @@
         android:layout_width="65dp"
         android:layout_height="75dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/stone"
-        app:layout_constraintHorizontal_bias="0.249"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.213"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.214"

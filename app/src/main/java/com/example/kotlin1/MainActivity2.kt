@@ -13,6 +13,9 @@ import androidx.dynamicanimation.animation.DynamicAnimation
 import androidx.dynamicanimation.animation.FlingAnimation
 import com.example.kotlin1.fragmentpack.OneStone
 import com.example.kotlin1.fragmentpack.TwoStone
+import kotlinx.android.synthetic.main.stone.*
+import java.util.*
+import kotlin.collections.ArrayList
 
 
 class MainActivity2 : AppCompatActivity() {
@@ -61,9 +64,9 @@ class MainActivity2 : AppCompatActivity() {
                 }
 
 
-                move2(Ground1)
-                move2(Ground2)
-               i
+                move2(Ground1, 1)
+                move2(Ground2, 2)
+
 
 
 
@@ -82,8 +85,9 @@ class MainActivity2 : AppCompatActivity() {
     }
 
 
-    private fun move2(view: View ){
-       if(view.y < -1600){
+    private fun move2(view: View, i: Int ){
+       if(view.y < -1700){
+           randomCord(view, i)
            view.y += 3850
        }
         else
@@ -101,6 +105,62 @@ class MainActivity2 : AppCompatActivity() {
     private fun animateImageViews(imageViews: List<ImageView>) {
         for (imageView in imageViews) {
             animateImageView(imageView)
+        }
+    }
+
+ private fun randomCord(view: View, i: Int)
+    {  val SignRandom = Random()
+        if(SignRandom.nextBoolean()) {
+            if (i == 1) {
+                val random = Random()
+                stonefirst.stone.y += random.nextInt(20)
+                stonefirst.stone.x -= random.nextInt(20)
+                stonefirst.stone1.y += random.nextInt(20)
+                stonefirst.stone1.x -= random.nextInt(20)
+                stonefirst.stone2.y += random.nextInt(20)
+                stonefirst.stone2.x -= random.nextInt(20)
+                stonefirst.stone3.y += random.nextInt(20)
+                stonefirst.stone3.x -= random.nextInt(20)
+            }
+            if (i == 2) {
+                val random = Random()
+                stonesecond.stone.y -= random.nextInt(20)
+                stonesecond.stone.x += random.nextInt(20)
+                stonesecond.stone1.y -= random.nextInt(20)
+                stonesecond.stone1.x += random.nextInt(20)
+                stonesecond.stone2.y -= random.nextInt(20)
+                stonesecond.stone2.x += random.nextInt(20)
+                stonesecond.stone3.y -= random.nextInt(20)
+                stonesecond.stone3.x += random.nextInt(20)
+
+            }
+
+        }
+        else{
+            if (i == 1) {
+                val random = Random()
+                stonefirst.stone.y -= random.nextInt(20)
+                stonefirst.stone.x += random.nextInt(20)
+                stonefirst.stone1.y -= random.nextInt(20)
+                stonefirst.stone1.x += random.nextInt(20)
+                stonefirst.stone2.y -= random.nextInt(20)
+                stonefirst.stone2.x += random.nextInt(20)
+                stonefirst.stone3.y -= random.nextInt(20)
+                stonefirst.stone3.x += random.nextInt(20)
+            }
+            if (i == 2) {
+                val random = Random()
+                stonesecond.stone.y += random.nextInt(20)
+                stonesecond.stone.x -= random.nextInt(20)
+                stonesecond.stone1.y += random.nextInt(20)
+                stonesecond.stone1.x -= random.nextInt(20)
+                stonesecond.stone2.y += random.nextInt(20)
+                stonesecond.stone2.x -= random.nextInt(20)
+                stonesecond.stone3.y += random.nextInt(20)
+                stonesecond.stone3.x -= random.nextInt(20)
+
+            }
+
         }
     }
 
