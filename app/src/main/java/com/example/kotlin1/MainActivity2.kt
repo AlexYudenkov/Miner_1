@@ -113,25 +113,25 @@ class MainActivity2 : AppCompatActivity() {
         if(SignRandom.nextBoolean()) {
             if (i == 1) {
                 val random = Random()
-                stonefirst.stone.y += random.nextInt(20)
-                stonefirst.stone.x -= random.nextInt(20)
-                stonefirst.stone1.y += random.nextInt(20)
-                stonefirst.stone1.x -= random.nextInt(20)
-                stonefirst.stone2.y += random.nextInt(20)
-                stonefirst.stone2.x -= random.nextInt(20)
-                stonefirst.stone3.y += random.nextInt(20)
-                stonefirst.stone3.x -= random.nextInt(20)
+                stonefirst.stone.y += random.nextInt(30)
+                stonefirst.stone.x -= random.nextInt(30)
+                stonefirst.stone1.y += random.nextInt(30)
+                stonefirst.stone1.x -= random.nextInt(30)
+                stonefirst.stone2.y += random.nextInt(30)
+                stonefirst.stone2.x -= random.nextInt(30)
+                stonefirst.stone3.y += random.nextInt(30)
+                stonefirst.stone3.x -= random.nextInt(30)
             }
             if (i == 2) {
                 val random = Random()
-                stonesecond.stone.y -= random.nextInt(20)
-                stonesecond.stone.x += random.nextInt(20)
-                stonesecond.stone1.y -= random.nextInt(20)
-                stonesecond.stone1.x += random.nextInt(20)
-                stonesecond.stone2.y -= random.nextInt(20)
-                stonesecond.stone2.x += random.nextInt(20)
-                stonesecond.stone3.y -= random.nextInt(20)
-                stonesecond.stone3.x += random.nextInt(20)
+                stonesecond.stone.y -= random.nextInt(30)
+                stonesecond.stone.x += random.nextInt(30)
+                stonesecond.stone1.y -= random.nextInt(30)
+                stonesecond.stone1.x += random.nextInt(30)
+                stonesecond.stone2.y -= random.nextInt(30)
+                stonesecond.stone2.x += random.nextInt(30)
+                stonesecond.stone3.y -= random.nextInt(30)
+                stonesecond.stone3.x += random.nextInt(30)
 
             }
 
@@ -139,25 +139,25 @@ class MainActivity2 : AppCompatActivity() {
         else{
             if (i == 1) {
                 val random = Random()
-                stonefirst.stone.y -= random.nextInt(20)
-                stonefirst.stone.x += random.nextInt(20)
-                stonefirst.stone1.y -= random.nextInt(20)
-                stonefirst.stone1.x += random.nextInt(20)
-                stonefirst.stone2.y -= random.nextInt(20)
-                stonefirst.stone2.x += random.nextInt(20)
-                stonefirst.stone3.y -= random.nextInt(20)
-                stonefirst.stone3.x += random.nextInt(20)
+                stonefirst.stone.y -= random.nextInt(30)
+                stonefirst.stone.x += random.nextInt(30)
+                stonefirst.stone1.y -= random.nextInt(30)
+                stonefirst.stone1.x += random.nextInt(30)
+                stonefirst.stone2.y -= random.nextInt(30)
+                stonefirst.stone2.x += random.nextInt(30)
+                stonefirst.stone3.y -= random.nextInt(30)
+                stonefirst.stone3.x += random.nextInt(30)
             }
             if (i == 2) {
                 val random = Random()
-                stonesecond.stone.y += random.nextInt(20)
-                stonesecond.stone.x -= random.nextInt(20)
-                stonesecond.stone1.y += random.nextInt(20)
-                stonesecond.stone1.x -= random.nextInt(20)
-                stonesecond.stone2.y += random.nextInt(20)
-                stonesecond.stone2.x -= random.nextInt(20)
-                stonesecond.stone3.y += random.nextInt(20)
-                stonesecond.stone3.x -= random.nextInt(20)
+                stonesecond.stone.y += random.nextInt(30)
+                stonesecond.stone.x -= random.nextInt(30)
+                stonesecond.stone1.y += random.nextInt(30)
+                stonesecond.stone1.x -= random.nextInt(30)
+                stonesecond.stone2.y += random.nextInt(30)
+                stonesecond.stone2.x -= random.nextInt(30)
+                stonesecond.stone3.y += random.nextInt(30)
+                stonesecond.stone3.x -= random.nextInt(30)
 
             }
 
