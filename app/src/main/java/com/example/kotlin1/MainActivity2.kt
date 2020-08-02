@@ -2,9 +2,9 @@ package com.example.kotlin1
 
 import android.app.FragmentManager
 import android.app.FragmentTransaction
-import android.content.Intent
 import android.graphics.drawable.Animatable
 import android.os.Bundle
+import android.view.KeyEvent
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
@@ -47,8 +47,7 @@ class MainActivity2 : AppCompatActivity() {
 
 
         ExitHome.setOnClickListener {
-            val randomIntent = Intent(this, MainActivity::class.java)
-            startActivity(randomIntent)
+            onDestroy()
             }
 
         imageViews.add(findViewById<View>(R.id.bur1) as ImageView)
@@ -85,6 +84,7 @@ class MainActivity2 : AppCompatActivity() {
     }
 
 
+
     private fun move2(view: View, i: Int ){
        if(view.y < -1700){
            randomCord(view, i)
@@ -108,7 +108,7 @@ class MainActivity2 : AppCompatActivity() {
         }
     }
 
- private fun randomCord(view: View, i: Int)
+    private fun randomCord(view: View, i: Int)
     {  val SignRandom = Random()
         if(SignRandom.nextBoolean()) {
             if (i == 1) {
@@ -179,6 +179,12 @@ class MainActivity2 : AppCompatActivity() {
             val animatable = drawable as Animatable
             animatable.start()
         }
+    }
+
+    // запретить нажимать кнопку back
+    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+        return if (keyCode == KeyEvent.KEYCODE_BACK) { true }
+        else {false}
     }
 }
 

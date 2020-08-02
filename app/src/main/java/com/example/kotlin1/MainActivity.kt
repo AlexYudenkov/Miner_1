@@ -3,6 +3,7 @@ package com.example.kotlin1
 import android.content.Intent
 import android.graphics.drawable.Animatable
 import android.os.Bundle
+import android.view.KeyEvent
 import android.view.View
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
@@ -21,16 +22,20 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         activityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-        //присваиваем кнопкам реальные id
+        var key = true // для фиксации однократного вызова второго активити
 
         activityMainBinding.bur.setOnClickListener {
             move(activityMainBinding.bur)
             move(activityMainBinding.groundbot2)
             // задержка 2 секунды перед переходом
             val handler2 = android.os.Handler()
-            handler2.postDelayed({ val randomIntent = Intent(this, MainActivity2::class.java)
-                startActivity(randomIntent) }, 2000) //specify the number of milliseconds
-
+            if(key) {
+                handler2.postDelayed({
+                    val randomIntent = Intent(this, MainActivity2::class.java)
+                    startActivity(randomIntent)
+                }, 2000) //specify the number of milliseconds
+                key = false
+            }
         }
 
 
@@ -38,12 +43,11 @@ class MainActivity : AppCompatActivity() {
             val menuInten = Intent(this, SettingsActivity::class.java)
             startActivity(menuInten)
         }
-        //создаем экземпляр листенера
-
 
         activityMainBinding.exit.setOnClickListener {
             System.exit(0)
         }
+
 
 
         val imageViews: MutableList<ImageView> =
@@ -53,6 +57,7 @@ class MainActivity : AppCompatActivity() {
 
         animateImageViews(imageViews)
     }
+
 
     private fun animateImageViews(imageViews: List<ImageView>) {
         for (imageView in imageViews) {
@@ -77,5 +82,9 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-
+    // запретить нажимать кнопку back
+    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+        return if (keyCode == KeyEvent.KEYCODE_BACK) { true }
+        else {false}
+    }
 }
