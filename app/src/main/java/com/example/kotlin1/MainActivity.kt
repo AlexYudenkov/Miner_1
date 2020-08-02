@@ -6,43 +6,44 @@ import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
 import androidx.dynamicanimation.animation.DynamicAnimation
 import androidx.dynamicanimation.animation.FlingAnimation
+import com.example.kotlin1.databinding.ActivityMainBinding
 
 
 //называем кнопки
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var activityMainBinding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        activityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         //присваиваем кнопкам реальные id
-        val Bur: ImageView = findViewById(R.id.bur)
-        val Tunnel: ImageView = findViewById(R.id.Tunnel)
-        val Menu1: ImageView = findViewById(R.id.menu)
-        val Exit1: ImageView = findViewById(R.id.exit)
 
-        Bur.setOnClickListener {
-            move(Bur)
-            move(Tunnel)
+        activityMainBinding.bur.setOnClickListener {
+            move(activityMainBinding.bur)
+            move(activityMainBinding.groundbot2)
             // задержка 2 секунды перед переходом
-            val handler = android.os.Handler()
-            handler.postDelayed({ val randomIntent = Intent(this, MainActivity2::class.java)
+            val handler2 = android.os.Handler()
+            handler2.postDelayed({ val randomIntent = Intent(this, MainActivity2::class.java)
                 startActivity(randomIntent) }, 2000) //specify the number of milliseconds
 
-
-            }
-
-        Menu1.setOnClickListener {
-                val menuInten = Intent(this, SettingsActivity::class.java)
-                startActivity(menuInten)
-            }
-                //создаем экземпляр листенера
+        }
 
 
-        Exit1.setOnClickListener {
-                    System.exit(0)
-                }
+        activityMainBinding.menu.setOnClickListener {
+            val menuInten = Intent(this, SettingsActivity::class.java)
+            startActivity(menuInten)
+        }
+        //создаем экземпляр листенера
+
+
+        activityMainBinding.exit.setOnClickListener {
+            System.exit(0)
+        }
 
 
         val imageViews: MutableList<ImageView> =
@@ -77,6 +78,4 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    }
-
-
+}

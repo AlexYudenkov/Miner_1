@@ -49,7 +49,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/bur1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/ic_tunnel" />
+        app:srcCompat="@drawable/ic_newtunnel" />
 
     <ImageView
         android:id="@+id/bur1"
