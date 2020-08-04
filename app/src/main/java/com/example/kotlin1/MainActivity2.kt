@@ -182,9 +182,9 @@ class MainActivity2 : AppCompatActivity() {
     }
 
     // запретить нажимать кнопку back
-    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+    /*override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
         return if (keyCode == KeyEvent.KEYCODE_BACK) { true }
         else {false}
-    }
+    }*/
 }
 

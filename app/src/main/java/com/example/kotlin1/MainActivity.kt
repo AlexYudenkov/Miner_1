@@ -5,6 +5,11 @@ import android.graphics.drawable.Animatable
 import android.os.Bundle
 import android.view.KeyEvent
 import android.view.View
+//анимация
+
+import android.view.animation.AnimationUtils
+import androidx.core.view.isGone
+
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -24,16 +29,27 @@ class MainActivity : AppCompatActivity() {
         activityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         var key = true // для фиксации однократного вызова второго активити
 
+
+        // анимация бура
+        var fallingAnimation = AnimationUtils.loadAnimation(this,
+                R.anim.down)
+        fallingAnimation.fillAfter=true
+
+
         activityMainBinding.bur.setOnClickListener {
             move(activityMainBinding.bur)
             move(activityMainBinding.groundbot2)
+
+            //activityMainBinding.bur.startAnimation(fallingAnimation)
+
+
             // задержка 2 секунды перед переходом
             val handler2 = android.os.Handler()
             if(key) {
                 handler2.postDelayed({
                     val randomIntent = Intent(this, MainActivity2::class.java)
                     startActivity(randomIntent)
-                }, 2000) //specify the number of milliseconds
+                    overridePendingTransition(R.anim.diagtranslate,R.anim.alpha)}, 3300)  //specify the number of milliseconds
                 key = false
             }
         }
