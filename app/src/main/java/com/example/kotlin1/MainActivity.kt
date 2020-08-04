@@ -24,6 +24,15 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var activityMainBinding: ActivityMainBinding
 
+
+    //если активити опять вернулось в работу
+    //то оно перезапускается
+    override fun onRestart() {
+        super.onRestart()
+        recreate()
+    }
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         activityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
@@ -74,7 +83,6 @@ class MainActivity : AppCompatActivity() {
         animateImageViews(imageViews)
     }
 
-
     private fun animateImageViews(imageViews: List<ImageView>) {
         for (imageView in imageViews) {
             animateImageView(imageView)
@@ -98,9 +106,5 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    // запретить нажимать кнопку back
-    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
-        return if (keyCode == KeyEvent.KEYCODE_BACK) { true }
-        else {false}
-    }
+
 }

@@ -1,7 +1,9 @@
 package com.example.kotlin1
 
+import android.app.ActionBar
 import android.app.FragmentManager
 import android.app.FragmentTransaction
+import android.content.Intent
 import android.graphics.drawable.Animatable
 import android.os.Bundle
 import android.view.KeyEvent
@@ -27,6 +29,8 @@ class MainActivity2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
+
+
         val Bur: ImageView = findViewById(R.id.bur1)
         val Ground1: View = findViewById(R.id.container)
         val Ground2: View = findViewById(R.id.container2)
@@ -35,7 +39,6 @@ class MainActivity2 : AppCompatActivity() {
         val ExitHome: ImageView = findViewById(R.id.exithome)
         val textView: TextView = findViewById(R.id.textView3)
         var i = 0
-
 
 
         val imageViews: MutableList<ImageView> =
@@ -48,7 +51,7 @@ class MainActivity2 : AppCompatActivity() {
 
         ExitHome.setOnClickListener {
             onDestroy()
-            }
+        }
 
         imageViews.add(findViewById<View>(R.id.bur1) as ImageView)
 
@@ -57,26 +60,26 @@ class MainActivity2 : AppCompatActivity() {
         //animateImageViews(imageViews)
         var a = false
         Bur.setOnClickListener {
-                if (!a){
-                    animateImageViews(imageViews)
-                    a = true
-                }
+            if (!a) {
+                animateImageViews(imageViews)
+                a = true
+            }
 
 
-                move2(Ground1, 1)
-                move2(Ground2, 2)
+            move2(Ground1, 1)
+            move2(Ground2, 2)
 
 
 
 
-                person.increment()
-                textView.text = person.score.toString()
+            person.increment()
+            textView.text = person.score.toString()
         }
 
 
     }
 
-    private fun move(Imageview :ImageView){
+    private fun move(Imageview: ImageView) {
         val flingAnimation = FlingAnimation(Imageview, DynamicAnimation.Y)
         flingAnimation.setStartVelocity(260f);
         flingAnimation.friction = 0.1f;
@@ -84,14 +87,11 @@ class MainActivity2 : AppCompatActivity() {
     }
 
 
-
-    private fun move2(view: View, i: Int ){
-       if(view.y < -1700){
-           randomCord(view, i)
-           view.y += 3850
-       }
-        else
-        {
+    private fun move2(view: View, i: Int) {
+        if (view.y < -1700) {
+            randomCord(view, i)
+            view.y += 3850
+        } else {
             view.visibility = View.VISIBLE
             val flingAnimation = FlingAnimation(view, DynamicAnimation.Y)
             flingAnimation.setStartVelocity(-350f);
@@ -108,9 +108,9 @@ class MainActivity2 : AppCompatActivity() {
         }
     }
 
-    private fun randomCord(view: View, i: Int)
-    {  val SignRandom = Random()
-        if(SignRandom.nextBoolean()) {
+    private fun randomCord(view: View, i: Int) {
+        val SignRandom = Random()
+        if (SignRandom.nextBoolean()) {
             if (i == 1) {
                 val random = Random()
                 stonefirst.stone.y += random.nextInt(30)
@@ -135,8 +135,7 @@ class MainActivity2 : AppCompatActivity() {
 
             }
 
-        }
-        else{
+        } else {
             if (i == 1) {
                 val random = Random()
                 stonefirst.stone.y -= random.nextInt(30)
@@ -165,7 +164,7 @@ class MainActivity2 : AppCompatActivity() {
     }
 
 
-    private fun start(){
+    private fun start() {
         transiction = manager.beginTransaction()
         transiction.add(R.id.container2, stonesecond)
         transiction.add(R.id.container, stonefirst)
@@ -182,9 +181,6 @@ class MainActivity2 : AppCompatActivity() {
     }
 
     // запретить нажимать кнопку back
-    /*override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
-        return if (keyCode == KeyEvent.KEYCODE_BACK) { true }
-        else {false}
-    }*/
+
 }
 
