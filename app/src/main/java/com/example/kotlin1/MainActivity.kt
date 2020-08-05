@@ -1,15 +1,12 @@
 package com.example.kotlin1
 
+//анимация
+
 import android.content.Intent
 import android.graphics.drawable.Animatable
 import android.os.Bundle
-import android.view.KeyEvent
 import android.view.View
-//анимация
-
 import android.view.animation.AnimationUtils
-import androidx.core.view.isGone
-
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -49,6 +46,7 @@ class MainActivity : AppCompatActivity() {
 
 
             // задержка 2 секунды перед переходом
+
             val handler2 = android.os.Handler()
             if(key) {
                 handler2.postDelayed({
@@ -57,7 +55,7 @@ class MainActivity : AppCompatActivity() {
                     //randomIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
                     //randomIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                     startActivity(randomIntent)
-                    overridePendingTransition(R.anim.diagtranslate,R.anim.alpha)}, 3300)  //specify the number of milliseconds
+                    overridePendingTransition(R.anim.diagtranslate,R.anim.alpha)}, 2500)  //specify the number of milliseconds
                 key = false
             }
         }

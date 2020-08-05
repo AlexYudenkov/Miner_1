@@ -32,21 +32,22 @@
             android:id="@+id/groundbot2"
             android:layout_width="199dp"
             android:layout_height="824dp"
-            android:layout_marginTop="416dp"
+            android:layout_marginTop="208dp"
             android:scaleType="centerCrop"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/bur"
             app:srcCompat="@drawable/ic_groundbot" />
 
         <ImageView
             android:id="@+id/groundtop"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="100dp"
+            android:layout_marginBottom="80dp"
             android:scaleType="centerInside"
             app:layout_constraintBottom_toBottomOf="@+id/groundbot"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:srcCompat="@drawable/ic_groundtop" />
 
@@ -91,6 +92,8 @@
             android:layout_width="273dp"
             android:layout_height="110dp"
             android:layout_marginTop="72dp"
+            android:layout_marginBottom="25dp"
+            app:layout_constraintBottom_toTopOf="@+id/bur"
             app:layout_constraintEnd_toEndOf="@+id/menu"
             app:layout_constraintHorizontal_bias="0.984"
             app:layout_constraintStart_toEndOf="@+id/exit"

@@ -16,20 +16,38 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.921"
-        app:srcCompat="@drawable/ic_ground_first_activity" />
+        app:srcCompat="@drawable/ic_groundbot_second" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/Tunnel1"
+        android:layout_width="693dp"
+        android:layout_height="1055dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_newtunnel" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:id="@+id/Tunnel2"
+        android:layout_width="693dp"
+        android:layout_height="1055dp"
+        android:layout_marginTop="800dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/Tunnel1"
+        app:srcCompat="@drawable/ic_newtunnel" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/container2"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="parent"></androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:id="@+id/groundbot3"
+        android:layout_width="199dp"
+        android:layout_height="824dp"
+        android:layout_marginTop="208dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bur1"
+        app:srcCompat="@drawable/ic_groundbot" />
+
     <ImageView
         android:id="@+id/exithome"
         android:layout_width="36dp"
@@ -43,24 +61,13 @@
         app:srcCompat="@drawable/ic_exit" />
 
     <ImageView
-        android:id="@+id/Tunnel"
-        android:layout_width="693dp"
-        android:layout_height="1055dp"
-        app:layout_constraintBottom_toBottomOf="@+id/bur1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/ic_newtunnel" />
-
-    <ImageView
         android:id="@+id/bur1"
         android:layout_width="245dp"
         android:layout_height="317dp"
         android:contentDescription="@android:string/httpErrorBadUrl"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/ic_newboer" />
 
     <TextView
