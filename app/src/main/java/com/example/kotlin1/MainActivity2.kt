@@ -3,6 +3,7 @@ package com.example.kotlin1
 import android.app.ActionBar
 import android.app.FragmentManager
 import android.app.FragmentTransaction
+import android.app.usage.UsageEvents
 import android.content.Intent
 import android.graphics.drawable.Animatable
 import android.os.Bundle
@@ -30,6 +31,12 @@ class MainActivity2 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
 
+        fun onBackPressed(){
+            super.onBackPressed()
+            val randomIntent = Intent(this, MainActivity::class.java)
+            startActivity(randomIntent)
+        }
+
 
         val Bur: ImageView = findViewById(R.id.bur1)
         val Ground1: View = findViewById(R.id.container)
@@ -39,6 +46,10 @@ class MainActivity2 : AppCompatActivity() {
         val ExitHome: ImageView = findViewById(R.id.exithome)
         val textView: TextView = findViewById(R.id.textView3)
         var i = 0
+
+
+        //обработка нажатия кнопки наза
+
 
 
         val imageViews: MutableList<ImageView> =
@@ -181,6 +192,12 @@ class MainActivity2 : AppCompatActivity() {
     }
 
     // запретить нажимать кнопку back
-
+    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+        return if (keyCode == KeyEvent.KEYCODE_BACK) {
+            val randomIntent = Intent(this, MainActivity::class.java)
+            startActivity(randomIntent)
+            true }
+        else {false}
+    }
 }
 

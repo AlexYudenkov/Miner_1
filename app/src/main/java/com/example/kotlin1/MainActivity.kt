@@ -27,10 +27,6 @@ class MainActivity : AppCompatActivity() {
 
     //если активити опять вернулось в работу
     //то оно перезапускается
-    override fun onRestart() {
-        super.onRestart()
-        recreate()
-    }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,7 +36,7 @@ class MainActivity : AppCompatActivity() {
 
 
         // анимация бура
-        var fallingAnimation = AnimationUtils.loadAnimation(this,
+        val fallingAnimation = AnimationUtils.loadAnimation(this,
                 R.anim.down)
         fallingAnimation.fillAfter=true
 
@@ -57,6 +53,9 @@ class MainActivity : AppCompatActivity() {
             if(key) {
                 handler2.postDelayed({
                     val randomIntent = Intent(this, MainActivity2::class.java)
+                    //ФЛАГИ АКТИВИТИ НО РАБОТАЮТ НЕМНОГО КРИВО
+                    //randomIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+                    //randomIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                     startActivity(randomIntent)
                     overridePendingTransition(R.anim.diagtranslate,R.anim.alpha)}, 3300)  //specify the number of milliseconds
                 key = false
