@@ -1,9 +1,9 @@
 package com.example.kotlin1
 
-import android.app.ActionBar
+
 import android.app.FragmentManager
 import android.app.FragmentTransaction
-import android.app.usage.UsageEvents
+import android.content.Context
 import android.content.Intent
 import android.graphics.drawable.Animatable
 import android.os.Bundle
@@ -26,7 +26,6 @@ class MainActivity2 : AppCompatActivity() {
     val stonesecond = TwoStone()
     var manager: FragmentManager = fragmentManager
     var transiction: FragmentTransaction = manager.beginTransaction()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
@@ -46,9 +45,8 @@ class MainActivity2 : AppCompatActivity() {
         val ExitHome: ImageView = findViewById(R.id.exithome)
         val textView: TextView = findViewById(R.id.textView3)
         var i = 0
+        var record:Int = 0
 
-
-        //обработка нажатия кнопки наза
 
 
 
@@ -59,15 +57,24 @@ class MainActivity2 : AppCompatActivity() {
         move(Bur)
         move(Tunnel1)
 
+        //запись насроек
+        //добавление рекордов
+        val sharedPref = getSharedPreferences("score", Context.MODE_PRIVATE)
+        //считывание
+        sharedPref.getInt("score",record)
+        val editor = sharedPref.edit()
+
 
         ExitHome.setOnClickListener {
-            onDestroy()
+            val randomIntent = Intent(this, MainActivity::class.java)
+            startActivity(randomIntent)
         }
 
         imageViews.add(findViewById<View>(R.id.bur1) as ImageView)
 
         //экземпляр класса
         val person = Score(0)
+        //person.Record=record
         //animateImageViews(imageViews)
         var a = false
         Bur.setOnClickListener {
@@ -84,7 +91,14 @@ class MainActivity2 : AppCompatActivity() {
 
 
             person.increment()
+            if(person.score > record){
+                record = person.score
+            }
+            //record = person.Record
             textView.text = person.score.toString()
+
+            editor.putInt("score",record)
+            editor.apply()
         }
 
 
@@ -191,7 +205,7 @@ class MainActivity2 : AppCompatActivity() {
         }
     }
 
-    // запретить нажимать кнопку back
+    // обработка нажатия кнопки назад
     override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
         return if (keyCode == KeyEvent.KEYCODE_BACK) {
             val randomIntent = Intent(this, MainActivity::class.java)

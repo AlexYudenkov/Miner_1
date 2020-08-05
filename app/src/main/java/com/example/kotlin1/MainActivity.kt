@@ -1,6 +1,9 @@
 package com.example.kotlin1
 
+import android.app.Activity
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.graphics.drawable.Animatable
 import android.os.Bundle
 import android.view.KeyEvent
@@ -23,10 +26,6 @@ import com.example.kotlin1.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     private lateinit var activityMainBinding: ActivityMainBinding
-
-
-    //если активити опять вернулось в работу
-    //то оно перезапускается
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -72,7 +71,13 @@ class MainActivity : AppCompatActivity() {
             System.exit(0)
         }
 
-
+        var aa:Int=0
+        val sharedPref = getSharedPreferences("score", Context.MODE_PRIVATE)
+        if(sharedPref.contains("score")) {
+            activityMainBinding.record2.setText(sharedPref.getInt("score",aa).toString())
+        }
+        //val editor = sharedPref.getInt("score", aa)
+        //activityMainBinding.record2.setText(aa.toString())
 
         val imageViews: MutableList<ImageView> =
             ArrayList()

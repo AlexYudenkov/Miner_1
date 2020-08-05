@@ -4,7 +4,7 @@
     <string name="button">ButtonMenu</string>
     <string name="buttonExit">ButtonExit</string>
     <string name="title_activity_settings">SettingsActivity</string>
-
+    <string name="saved_high_score">0</string>
     <!-- Preference Titles -->
     <string name="messages_header">Messages</string>
     <string name="sync_header">Sync</string>
@@ -23,4 +23,5 @@
     <string name="menu">Menu</string>
     <string name="exit">Exit</string>
     <string name="ground">Ground</string>
+    <string name="resources">resources</string>
 </resources>
