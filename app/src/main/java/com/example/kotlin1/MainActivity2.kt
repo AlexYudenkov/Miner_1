@@ -21,12 +21,6 @@ class MainActivity2 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
 
-        fun onBackPressed(){
-            super.onBackPressed()
-            val randomIntent = Intent(this, MainActivity::class.java)
-            startActivity(randomIntent)
-        }
-
 
         val Bur: ImageView = findViewById(R.id.bur1)
         val GroundBot: ImageView = findViewById(R.id.groundbot3)
@@ -36,18 +30,13 @@ class MainActivity2 : AppCompatActivity() {
 
         //обработка нажатия кнопки наза
 
-
-
         val imageViews: MutableList<ImageView> =
                 ArrayList()
 
-
         movestart(GroundBot, Bur)
 
-
-
         ExitHome.setOnClickListener {
-            onDestroy()
+
         }
 
         imageViews.add(findViewById<View>(R.id.bur1) as ImageView)
@@ -92,6 +81,9 @@ class MainActivity2 : AppCompatActivity() {
 
     }
 
+
+
+
     private fun move(Imageview: ImageView) {
         val flingAnimation = FlingAnimation(Imageview, DynamicAnimation.Y)
         flingAnimation.setStartVelocity(260f);
@@ -111,16 +103,20 @@ class MainActivity2 : AppCompatActivity() {
         }
     }
 
+    //Шаманская штука(лучше не трогать)
     private fun movestart(Imageview: ImageView, Imageview2: ImageView) {
-        Imageview.y +=590f
         val flingAnimation = FlingAnimation(Imageview, DynamicAnimation.Y)
         val flingAnimation2 = FlingAnimation(Imageview2, DynamicAnimation.Y)
-        flingAnimation.setStartVelocity(300f);
-        flingAnimation.friction = 0.1f;
-        flingAnimation.start();
-        flingAnimation2.setStartVelocity(300f);
+        flingAnimation2.setStartVelocity(350f);
         flingAnimation2.friction = 0.1f;
         flingAnimation2.start();
+        val handler = android.os.Handler()
+        handler.postDelayed({
+            flingAnimation.setStartVelocity(350f);
+            flingAnimation.friction = 0.1f;
+            flingAnimation.start();}, 1)
+
+
     }
 
 
