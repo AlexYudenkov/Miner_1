@@ -41,7 +41,7 @@
         android:id="@+id/groundbot3"
         android:layout_width="199dp"
         android:layout_height="824dp"
-        android:layout_marginTop="208dp"
+        android:layout_marginTop="100dp"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,10 +64,11 @@
         android:id="@+id/bur1"
         android:layout_width="245dp"
         android:layout_height="317dp"
+        android:layout_marginBottom="420dp"
         android:contentDescription="@android:string/httpErrorBadUrl"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_newboer" />
 
     <TextView
