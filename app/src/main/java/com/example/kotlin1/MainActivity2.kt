@@ -2,10 +2,10 @@ package com.example.kotlin1
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.Point
 import android.graphics.drawable.Animatable
 import android.os.Bundle
 import android.view.KeyEvent
-import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -30,16 +30,13 @@ class MainActivity2 : AppCompatActivity() {
 
         //обработка нажатия кнопки наза
 
-        val imageViews: MutableList<ImageView> =
-                ArrayList()
+        ExitHome.setOnClickListener {
+            val randomIntent = Intent(this, MainActivity::class.java)
+            startActivity(randomIntent) }
+
 
         movestart(GroundBot, Bur)
 
-        ExitHome.setOnClickListener {
-
-        }
-
-        imageViews.add(findViewById<View>(R.id.bur1) as ImageView)
 
         //var record:Int = -1
         //запись насроек
@@ -56,12 +53,8 @@ class MainActivity2 : AppCompatActivity() {
         //записали рекорд предыдущий
         person.Record = record
         //animateImageViews(imageViews)
-        var a = false
         Bur.setOnClickListener {
-            if (!a) {
-                animateImageViews(imageViews)
-                a = true
-            }
+
 
 
             moveTunnel(Tunnel1)
@@ -92,10 +85,16 @@ class MainActivity2 : AppCompatActivity() {
     }
 
     private fun moveTunnel(Imageview: ImageView) {
-        if(Imageview.y <= -2200){
-            Imageview.y += 4000
+        val display = windowManager.defaultDisplay
+        val size = Point()
+        display.getSize(size)
+        //val width: Int = size.x
+        val height: Int = size.y
+
+        if(Imageview.y <= -(height)){
+            Imageview.y += 2*height
         }
-            else {
+        else {
             val flingAnimation = FlingAnimation(Imageview, DynamicAnimation.Y)
             flingAnimation.setStartVelocity(-260f);
             flingAnimation.friction = 0.1f;
@@ -107,12 +106,12 @@ class MainActivity2 : AppCompatActivity() {
     private fun movestart(Imageview: ImageView, Imageview2: ImageView) {
         val flingAnimation = FlingAnimation(Imageview, DynamicAnimation.Y)
         val flingAnimation2 = FlingAnimation(Imageview2, DynamicAnimation.Y)
-        flingAnimation2.setStartVelocity(350f);
+        flingAnimation2.setStartVelocity(250f);
         flingAnimation2.friction = 0.1f;
         flingAnimation2.start();
         val handler = android.os.Handler()
         handler.postDelayed({
-            flingAnimation.setStartVelocity(350f);
+            flingAnimation.setStartVelocity(250f);
             flingAnimation.friction = 0.1f;
             flingAnimation.start();}, 1)
 
