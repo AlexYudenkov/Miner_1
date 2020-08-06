@@ -1,5 +1,6 @@
 package com.example.kotlin1
 
+import android.content.Context
 import android.content.Intent
 import android.graphics.drawable.Animatable
 import android.os.Bundle
@@ -51,8 +52,20 @@ class MainActivity2 : AppCompatActivity() {
 
         imageViews.add(findViewById<View>(R.id.bur1) as ImageView)
 
-        //экземпляр класса
+        //var record:Int = -1
+        //запись насроек
+        //добавление рекордов
+        val sharedPref = getSharedPreferences("record", Context.MODE_PRIVATE)
+        //считывание рекорда из файла настроек
+        var record:Int = sharedPref.getInt("score",0)
+        //приготовка к записи
+        val editor = sharedPref.edit()
+
+
+        //экземпляр класса очков
         val person = Score(0)
+        //записали рекорд предыдущий
+        person.Record = record
         //animateImageViews(imageViews)
         var a = false
         Bur.setOnClickListener {
@@ -65,7 +78,14 @@ class MainActivity2 : AppCompatActivity() {
             moveTunnel(Tunnel1)
             moveTunnel(Tunnel2)
 
-            person.increment()
+            if(person.increment()){
+                //записываем в хеш
+                editor.putInt("score",person.Record)
+                editor.apply()
+            }
+
+
+
             textView.text = person.score.toString()
         }
 

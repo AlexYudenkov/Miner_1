@@ -15,7 +15,14 @@ class Score(Score: Int) {
         set(value) {
             field = value
         }
-    fun increment(){
+    var Record: Int = 0
+    fun increment():Boolean{
         this.score++
+        if(score > Record) {
+            Record=score
+            return true
+        }else {
+            return false
+        }
     }
 }

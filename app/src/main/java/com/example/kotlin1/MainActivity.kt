@@ -2,6 +2,7 @@ package com.example.kotlin1
 
 //анимация
 
+import android.content.Context
 import android.content.Intent
 import android.graphics.drawable.Animatable
 import android.os.Bundle
@@ -22,8 +23,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var activityMainBinding: ActivityMainBinding
 
 
-    //если активити опять вернулось в работу
-    //то оно перезапускается
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -69,6 +69,14 @@ class MainActivity : AppCompatActivity() {
         activityMainBinding.exit.setOnClickListener {
             System.exit(0)
         }
+
+
+        var aa:Int=0
+        val sharedPref = getSharedPreferences("record", Context.MODE_PRIVATE)
+        if(sharedPref.contains("score")) {
+            activityMainBinding.record2.setText(sharedPref.getInt("score",aa).toString())
+        }
+
 
 
 
