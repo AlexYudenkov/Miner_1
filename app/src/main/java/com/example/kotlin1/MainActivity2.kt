@@ -6,6 +6,7 @@ import android.graphics.Point
 import android.graphics.drawable.Animatable
 import android.os.Bundle
 import android.view.KeyEvent
+import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -76,7 +77,6 @@ class MainActivity2 : AppCompatActivity() {
 
 
 
-
     private fun move(Imageview: ImageView) {
         val flingAnimation = FlingAnimation(Imageview, DynamicAnimation.Y)
         flingAnimation.setStartVelocity(260f);
@@ -102,39 +102,17 @@ class MainActivity2 : AppCompatActivity() {
         }
     }
 
-    //Шаманская штука(лучше не трогать)
+    //Стартовая анимация бура и заслонки
     private fun movestart(Imageview: ImageView, Imageview2: ImageView) {
-        val flingAnimation = FlingAnimation(Imageview, DynamicAnimation.Y)
-        val flingAnimation2 = FlingAnimation(Imageview2, DynamicAnimation.Y)
-        flingAnimation2.setStartVelocity(250f);
-        flingAnimation2.friction = 0.1f;
-        flingAnimation2.start();
-        val handler = android.os.Handler()
-        handler.postDelayed({
-            flingAnimation.setStartVelocity(250f);
-            flingAnimation.friction = 0.1f;
-            flingAnimation.start();}, 1)
+
+        var fallingAnimation = AnimationUtils.loadAnimation(this,
+            R.anim.down)
+        fallingAnimation.fillAfter=true
 
 
-    }
+        Imageview.startAnimation(fallingAnimation)
+        Imageview2.startAnimation(fallingAnimation)
 
-
-
-    private fun animateImageViews(imageViews: List<ImageView>) {
-        for (imageView in imageViews) {
-            animateImageView(imageView)
-        }
-    }
-
-
-
-
-    private fun animateImageView(imageView: ImageView) {
-        val drawable = imageView.drawable
-        if (drawable is Animatable) {
-            val animatable = drawable as Animatable
-            animatable.start()
-        }
     }
 
     // запретить нажимать кнопку back
