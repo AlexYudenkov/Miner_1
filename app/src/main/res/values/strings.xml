@@ -23,4 +23,8 @@
     <string name="menu">Menu</string>
     <string name="exit">Exit</string>
     <string name="ground">Ground</string>
+    <string name="back_button">Back Button</string>
+    <string name="tunnel">Tunnel</string>
+    <string name="bur">bur</string>
+    <string name="_0">0</string>
 </resources>
